@@ -13,4 +13,273 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-image: var(--image-fon);
+  background-size: cover;
+  color: var(--color-text);
+  max-inline-size: 700px;
+  margin: auto;
+}
+
+.header {
+  font-family: PressStart2P, sans-serif;
+  background-color: var(--color-fon);
+  display: grid;
+  justify-content: center;
+  margin: 100px auto;
+  border: solid 2px var(--color-text);
+  padding: clamp(7.49rem, 0.6769rem + 9.8451vw, 8rem) 0;
+  gap: 20px;
+  justify-items: center;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+main {
+  display: grid;
+  gap: 50px;
+  font-size: 18px;
+  font-family: inter, sans-serif;
+} 
+
+.header p {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-weight: 400;
+}
+
+.card {
+  background-color: var(--color-fon);
+  border: solid 2px var(--color-text);
+  
+}
+
+.title-card {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 5px 10px;
+}
+
+.label {
+  position: relative;
+  overflow: hidden;
+}
+
+.label p {
+  position: absolute;
+  right: 25px;
+  top: 30px;
+  color: rgba(0, 0, 0, 1);
+  font-family: PressStart2P, sans-serif;
+  text-shadow: -1px 0 var(--color-shadow), 0 1px var(--color-shadow),
+    1px 0 var(--color-shadow), 0 -1px var(--color-shadow);
+  font-size: 14px;
+  mix-blend-mode: hard-light;
+  opacity: 50%;
+  font-weight: 400;
+  z-index: 2;
+}
+
+@supports (
+  (text-stroke: 1px var(--color-shadow)) or
+    (-webkit-text-stroke: 1px var(--color-shadow))
+) {
+  .label p {
+    -webkit-text-stroke: 1px var(--color-shadow);
+    text-stroke: 1px var(--color-shadow);
+    text-shadow: none;
+  }
+}
+
+.heart {
+  transform-origin: center;
+}
+
+.image {
+  width: 100%;
+  border-bottom: solid 2px var(--color-text);
+  border-top: solid 2px var(--color-text);
+  
+}
+
+.text {
+  padding: 21px 25px 25px;
+  display: grid;
+  gap: 25px;
+}
+
+.content {
+  display: grid;
+  gap: 27px;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  padding: 0;
+  height: 38px;
+  margin: 0px 4px 0 0;
+  border: transparent solid 2px;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid black;
+  animation: focus 0.3s ease forwards;
+}
+
+.like-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.button {
+  background-color: transparent;
+  font-family: PressStart2P;
+  border: 2px solid var(--color-text);
+  padding: 10px 0;
+  width: 130px;
+  font-size: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.button__text {
+  position: relative;
+  color: #ffffff;
+  mix-blend-mode: difference;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 var(--color-text);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+
+.button:hover::before {
+  transform: translateX(0);
+}
+
+.icon {
+  margin: auto;
+  flex-shrink: 0;
+}
+
+.footer {
+  margin: 50px 32px clamp(6.3rem, 0.6769rem - 1.8451vw, 1rem);
+}
+
+.footer-button {
+  display: flex;
+  flex-direction: column;
+  padding: 19px 20px;
+  margin: auto;
+  background-color: white;
+}
+
+.card:nth-of-type(2) .image {
+  filter: grayscale(100%);
+}
+
+.card:nth-of-type(3) .image {
+  filter: brightness(2) blur(5px);
+}
+
+.card:nth-of-type(4) .image {
+  filter: contrast(53%);
+}
+
+.card:nth-of-type(5) .image {
+  filter: sepia(50%);
+}
+
+.card:nth-of-type(6) .image {
+  filter: saturate(50%);
+}
+
+.card:nth-of-type(7) .image {
+  filter: invert(100%);
+}
+
+.card:nth-of-type(8) .image {
+  filter: hue-rotate(30deg);
+}
+
+@media (min-width: 1440px) {
+  .footer-button {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 19px;
+    gap: 10px;
+    width: auto;
+  }
+
+  .icon-save {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+.dialog {
+  padding: clamp(2rem, 1.06769rem - 1.8451vw, 1rem) clamp(2.47rem, 0.6769rem - 5.8451vw, 5rem);
+  gap: 30px;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  inset: 0;
+  width: 341px;
+  font-size: 14px;
+  margin: auto;
+  border: 2px solid black;
+  text-transform: uppercase;
+  line-height: 21px;
+}
+
+.dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.content-dialog {
+  display: flex;
+  font-family: PressStart2P;
+  gap: 20px;
+  position: relative;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.button-dialog {
+  align-items: center;
+  padding: 9px;
+  border: 2px solid rgba(0, 0, 0, 1);
+  width: 100%;
+  text-transform: uppercase;
+  color: var(--color-fon);
+}
+
+@media (width <= 375px) {
+  body {
+    margin: 0px;
+  }
 }
