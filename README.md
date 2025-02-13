@@ -1,1 +1,1 @@
-https://github.com/lensboole/zakrivayuschiy-teg-f.git
+https://lensboole.github.io/zakrivayuschiy-teg-f/

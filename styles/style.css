@@ -18,6 +18,8 @@
   color: var(--color-text);
   max-inline-size: 700px;
   margin: auto;
+  background-attachment: fixed;
+  font-variation-settings:var(--text-normal)
 }
 
 .header {
@@ -39,6 +41,7 @@ main {
   gap: 50px;
   font-size: 18px;
   font-family: inter, sans-serif;
+  line-height: 21px;
 }
 
 .header p {
@@ -47,7 +50,6 @@ main {
 
 .title {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-  font-variation-settings: "wght" var(--text-normal);
   font-weight: 400;
 }
 
@@ -70,7 +72,7 @@ main {
 .label p {
   position: absolute;
   right: clamp(10px, 2.5vw, 25px);
-  top: clamp(25px, 2.5vw, 28px);
+  top: clamp(23px, 2.5vw, 28px);
   color: rgba(0, 0, 0, 1);
   font-family: PressStart2P, fantasy, sans-serif;
   text-shadow: -1px 0 var(--color-shadow), 0 1px var(--color-shadow),
@@ -78,7 +80,6 @@ main {
   font-size: 14px;
   mix-blend-mode: hard-light;
   opacity: 50%;
-  font-variation-settings: "wght" var(--text-normal);
   z-index: 2;
 }
 
@@ -117,6 +118,7 @@ main {
   height: 38px;
   margin: 0px 4px 0 0;
   border: transparent solid 2px;
+  transition: border 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -125,7 +127,6 @@ main {
 
 .card__icon-button:focus-visible {
   border: 2px solid black;
-  transition: border 0.3s ease forwards;
 }
 
 .like-button {
@@ -136,14 +137,14 @@ main {
 
 .button {
   background-color: transparent;
-  font-family: PressStart2P, sans-serif;
+  font-family: PressStart2P, fantasy, sans-serif;
   border: 2px solid var(--color-text);
   padding: 10px 0;
   min-inline-size: 130px;
   font-size: 14px;
   overflow: hidden;
   position: relative;
-  transition: border 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .button__text {
@@ -195,12 +196,8 @@ main {
   filter: grayscale(100%);
 }
 
-.filter-brightness {
-  filter: brightness(2);
-}
-
-.filter-blur {
-  filter: blur(3px);
+.filter-brightness-blur {
+  filter: brightness(2) blur(3px);
 }
 
 .filter-contrast {
@@ -262,7 +259,7 @@ main {
 
 .content-dialog {
   display: flex;
-  font-family: PressStart2P;
+  font-family: PressStart2P, fantasy, sans-serif;
   gap: 20px;
   position: relative;
 }
