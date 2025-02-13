@@ -21,7 +21,7 @@
 }
 
 .header {
-  font-family: PressStart2P, sans-serif;
+  font-family: PressStart2P, fantasy, sans-serif;
   background-color: var(--color-fon);
   display: grid;
   justify-content: center;
@@ -39,7 +39,7 @@ main {
   gap: 50px;
   font-size: 18px;
   font-family: inter, sans-serif;
-} 
+}
 
 .header p {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
@@ -47,18 +47,18 @@ main {
 
 .title {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-variation-settings: "wght" var(--text-normal);
   font-weight: 400;
 }
 
 .card {
   background-color: var(--color-fon);
   border: solid 2px var(--color-text);
-  
 }
 
 .title-card {
   font-size: 18px;
-  font-weight: 700;
+  font-variation-settings: "wght" var(--text-bold);
   padding: 5px 10px;
 }
 
@@ -69,16 +69,16 @@ main {
 
 .label p {
   position: absolute;
-  right: 25px;
-  top: 30px;
+  right: clamp(10px, 2.5vw, 25px);
+  top: clamp(25px, 2.5vw, 28px);
   color: rgba(0, 0, 0, 1);
-  font-family: PressStart2P, sans-serif;
+  font-family: PressStart2P, fantasy, sans-serif;
   text-shadow: -1px 0 var(--color-shadow), 0 1px var(--color-shadow),
     1px 0 var(--color-shadow), 0 -1px var(--color-shadow);
   font-size: 14px;
   mix-blend-mode: hard-light;
   opacity: 50%;
-  font-weight: 400;
+  font-variation-settings: "wght" var(--text-normal);
   z-index: 2;
 }
 
@@ -101,18 +101,14 @@ main {
   width: 100%;
   border-bottom: solid 2px var(--color-text);
   border-top: solid 2px var(--color-text);
-  
+  object-fit: cover;
+  object-position: center;
 }
 
 .text {
   padding: 21px 25px 25px;
   display: grid;
-  gap: 25px;
-}
-
-.content {
-  display: grid;
-  gap: 27px;
+  gap: 26px;
 }
 
 .card__icon-button {
@@ -129,7 +125,7 @@ main {
 
 .card__icon-button:focus-visible {
   border: 2px solid black;
-  animation: focus 0.3s ease forwards;
+  transition: border 0.3s ease forwards;
 }
 
 .like-button {
@@ -140,13 +136,14 @@ main {
 
 .button {
   background-color: transparent;
-  font-family: PressStart2P;
+  font-family: PressStart2P, sans-serif;
   border: 2px solid var(--color-text);
   padding: 10px 0;
-  width: 130px;
+  min-inline-size: 130px;
   font-size: 14px;
   overflow: hidden;
   position: relative;
+  transition: border 0.3s ease;
 }
 
 .button__text {
@@ -172,7 +169,6 @@ main {
   transition: transform 0.5s ease-in-out;
 }
 
-
 .button:hover::before {
   transform: translateX(0);
 }
@@ -182,48 +178,53 @@ main {
   flex-shrink: 0;
 }
 
-.footer {
-  margin: 50px 32px clamp(6.3rem, 0.6769rem - 1.8451vw, 1rem);
+.save {
+  margin: 0px 32px clamp(6.3rem, 0.6769rem - 1.8451vw, 1rem);
 }
 
-.footer-button {
+.save-button {
   display: flex;
   flex-direction: column;
-  padding: 19px 20px;
+  padding: 15px 20px 14px;
   margin: auto;
   background-color: white;
+  gap: 9px;
 }
 
-.card:nth-of-type(2) .image {
+.filter-grayscale {
   filter: grayscale(100%);
 }
 
-.card:nth-of-type(3) .image {
-  filter: brightness(2) blur(5px);
+.filter-brightness {
+  filter: brightness(2);
 }
 
-.card:nth-of-type(4) .image {
+.filter-blur {
+  filter: blur(3px);
+}
+
+.filter-contrast {
   filter: contrast(53%);
 }
 
-.card:nth-of-type(5) .image {
+.filter-sepia {
   filter: sepia(50%);
 }
 
-.card:nth-of-type(6) .image {
+.filter-saturate {
   filter: saturate(50%);
 }
 
-.card:nth-of-type(7) .image {
+.filter-invert {
   filter: invert(100%);
 }
 
-.card:nth-of-type(8) .image {
+.filter-hue-rotate {
   filter: hue-rotate(30deg);
 }
 
 @media (min-width: 1440px) {
-  .footer-button {
+  .save-button {
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -239,7 +240,8 @@ main {
 }
 
 .dialog {
-  padding: clamp(2rem, 1.06769rem - 1.8451vw, 1rem) clamp(2.47rem, 0.6769rem - 5.8451vw, 5rem);
+  padding: clamp(2rem, 1.06769rem - 1.8451vw, 1rem)
+    clamp(2.47rem, 0.6769rem - 5.8451vw, 5rem);
   gap: 30px;
   display: flex;
   position: fixed;
@@ -276,6 +278,11 @@ main {
   width: 100%;
   text-transform: uppercase;
   color: var(--color-fon);
+}
+
+.icon-dialog {
+  width: 40px;
+  height: 40px;
 }
 
 @media (width <= 375px) {

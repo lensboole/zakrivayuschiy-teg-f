@@ -87,7 +87,6 @@
 
 .like-icon.is-liked .heart {
   color: rgb(255, 0, 0);
-  transition: color 0.3s 0.05s linear;
   animation: heart 0.3s 0.1s ease-in;
 }
 
